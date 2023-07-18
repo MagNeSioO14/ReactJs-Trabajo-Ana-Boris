@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "titulo": "Kaguya-sama",
+        "imagen": "../../public/remeras/Kaguya.png",
+        "descripcion" :"Remera de algodón estampada en serigrafía. Talles en la Ultima imagen de este post.",
+        "categoria" :"remeras",
+        "precio": 1500
+    },
+    {
+        "id": 2,
+        "titulo": "Marciano",
+        "imagen": "../../public/remeras/Marciano.png",
+        "descripcion" :"Remera de algodón estampada en serigrafía. Talles en la Ultima imagen de este post.",
+        "categoria" : "Remera",
+        "precio": 2000
+    },
+    {
+        "id": 3,
+        "titulo": "Ojos",
+        "imagen": "../../public/remeras/Ojos.png",
+        "descripcion" :"Remera de algodón estampada en serigrafía. Talles en la Ultima imagen de este post.",
+        "categoria" :"remeras",
+        "precio": 1000
+    },
+    {
+        "id": 4,
+        "titulo": "Pulpo",
+        "imagen": "../../public/remeras/Pulpo.png",
+        "descripcion" :"Remera de algodón estampada en serigrafía. Talles en la Ultima imagen de este post.",
+        "categoria" :"remeras",
+        "precio": 800
+    },
+    {
+        "id": 5,
+        "titulo": "Revenger",
+        "imagen": "../../public/remeras/Revenger.png",
+        "descripcion" :"Remera de algodón estampada en serigrafía. Talles en la Ultima imagen de este post.",
+        "categoria" :"remeras",
+        "precio": 2000
+    }
+]
