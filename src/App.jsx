@@ -4,9 +4,10 @@ import './app.css'
 import ItemsListContainer from "./componentes/ItemListContainer/ItemListContainer"
 import './componentes/Header/Header.scss'
 import './componentes/ItemListContainer/ItemListContainer.scss'
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { CarouselDark } from './componentes/Carousel/CarouselDark';
 import Footer from './componentes/Footer/Footer';
+import ItemDetailContainer from './componentes/ItemDetailContainer/ItemDetailContainer';
 
 function App() {
 
@@ -14,8 +15,20 @@ function App() {
     <BrowserRouter>
 
       <Header />
-      <CarouselDark/>
-      <ItemsListContainer />
+      
+      <Routes> 
+        <Route path='/' element={
+        <div>
+          <CarouselDark/>
+          <ItemsListContainer />
+        </div>
+        }/>
+
+        <Route path='/producto/:itemId' element={<ItemDetailContainer/>}/>
+
+
+      </Routes>
+
       <Footer/>
       
     </BrowserRouter>

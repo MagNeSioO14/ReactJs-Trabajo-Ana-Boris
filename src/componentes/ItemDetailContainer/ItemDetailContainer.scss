@@ -1,0 +1,51 @@
+.produCuerpo {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    .produTamaño {
+        width: 25%;
+        margin: 2% 5%;
+
+        .produOrden {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        div {
+            margin: 5% 0%;
+        }
+
+        img {
+            width: 95%;
+        }
+
+        select {
+            width: 50%;
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+
+        .separar {
+            display: flex;
+            justify-content: space-between;
+            margin: 10px 0px;
+        }
+
+        .btnAgregar {
+            border-radius: 0px;
+            padding: 5px;
+            width: 95%;
+            margin-left: 2.5%;
+            margin-right: 2.5%;
+            color: black;
+            background-color: blanchedalmond;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+
+    }
+}

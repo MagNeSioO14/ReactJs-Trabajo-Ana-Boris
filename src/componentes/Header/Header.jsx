@@ -2,6 +2,8 @@ import { CartWidget } from "../CartWidget/CartWidget";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import logoZeuz from '../../assets/logoZeuz.png'
+import { Link } from "react-router-dom";
+
 
 
 export const Header = () => {
@@ -33,7 +35,7 @@ export const Header = () => {
                 </nav>
 
                 <nav className="headerNav">
-                    <a className="navLink" href="">Home</a>
+                    <Link className="navLink" to="/">Home</Link>
                     <a className="navLink" href="">Catalogo</a>
                     <a className="navLink" href="">Nosotros</a>
                 </nav>

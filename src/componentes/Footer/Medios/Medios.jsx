@@ -5,9 +5,9 @@ import LogoFace from "../../../Assets/facelogo.png";
 export const Medios = () => {
 
     return (
-        <div class="mediosOrden contacOrden">
+        <div className="mediosOrden contacOrden">
             <ul>
-                <h4 class="hFooterEstilos">Navegacion</h4>
+                <h4 className="hFooterEstilos">Navegacion</h4>
                 <li><Link to="/">Inicio</Link></li>
                 <li><Link to="/catalogo">Catalogo</Link></li>
                 <li><Link to="/quienessomos">Quienes somos?</Link></li>
@@ -16,13 +16,13 @@ export const Medios = () => {
             </ul>
 
             <ul>
-                <h4 class="hFooterEstilos">Contactanos</h4>
+                <h4 className="hFooterEstilos">Contactanos</h4>
 
                 <Link to="https://www.instagram.com/zeuz_rw/" target="_blank">
-                    <img src={LogoInsta} alt="Instagram" class="logoRedes"/>
+                    <img src={LogoInsta} alt="Instagram" className="logoRedes"/>
                 </Link>
                 <Link to="https://www.facebook.com/zeuzrw" target="_blank">
-                    <img src={LogoFace} alt="Facebook" class="logoRedes"/>
+                    <img src={LogoFace} alt="Facebook" className="logoRedes"/>
                 </Link>
             </ul>
 
