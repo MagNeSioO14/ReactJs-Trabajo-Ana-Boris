@@ -6,10 +6,12 @@ import './Footer.scss';
 const Footer = () => {
 
     return (
+
         <div className="divFooter">
-            <Medios/>
-            <Pagos/>
+            <Medios />
+            <Pagos />
         </div>
+
     )
 }
 

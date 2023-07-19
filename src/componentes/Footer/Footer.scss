@@ -1,45 +1,45 @@
-.divFooter {
-	display: flex;
-	justify-content: space-evenly;
-	background-color: blanchedalmond;
-	padding: 40px 0px 0px 0px;
-	padding-bottom: 20px;
+.divFooter {   
+    display: flex;
+    justify-content: space-evenly;
+    background-color: blanchedalmond;
+    padding: 40px 0px 0px 0px;
+    padding-bottom: 20px; 
 
-	ul {
-		padding: 20px 30px 30px 30px;
-		color: black;
-	}
+    ul {
+        padding: 20px 30px 30px 30px;
+        color: black;
+    }
 
-	a {
-		color: black;
-		font-weight: bold;
+    a {
+        color: black;
+        font-weight: bold;
         text-decoration: none;
-	}
+    }
 
-    li{
+    li {
         list-style-type: none;
     }
+
     .hFooterEstilos {
         margin: 0px 0px 10px 0px;
         font-weight: bold;
         text-transform: uppercase;
         color: black;
     }
-    
+
     .logoTarjetas {
         width: 40px;
         height: 25px;
         margin: 0px 3px;
     }
-    
+
     .logoRedes {
         width: 43px;
         height: 43px;
     }
     .contacOrden {
-		display: flex;
-		justify-content: space-evenly;
-	}
-    
-}
+        display: flex;
+        justify-content: space-evenly;
+    }
 
+}

@@ -10,7 +10,7 @@ export const Medios = () => {
                 <h4 className="hFooterEstilos">Navegacion</h4>
                 <li><Link to="/">Inicio</Link></li>
                 <li><Link to="/catalogo">Catalogo</Link></li>
-                <li><Link to="/quienessomos">Quienes somos?</Link></li>
+                <li><Link to="/nosotros">Quienes somos?</Link></li>
                 <li><Link to="/contacto">Contacto</Link></li>
                 <li><Link to="/talles">Nuestros talles</Link></li>
             </ul>

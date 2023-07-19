@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { pedirDatos } from "../../helpers/pedirDatos";
 import ItemList from "../ItemList/ItemList";
+import './ItemListContainer.scss'
 
 
 const ItemsListContainer = () => {
@@ -9,6 +10,7 @@ const ItemsListContainer = () => {
     const [loading, setLoading] = useState (true)
 
     const {categoryId} = useParams()
+    console.log(categoryId)
 
     useEffect(() => {
         setLoading(true)
@@ -16,7 +18,7 @@ const ItemsListContainer = () => {
         pedirDatos()
             .then(r => {
                 if (categoryId) {
-                    setProductos (r.filter(prod.categoria === categoryId))
+                    setProductos (r.filter(prod => prod.category === categoryId))
                 }else{
                     setProductos(r)
                 }
