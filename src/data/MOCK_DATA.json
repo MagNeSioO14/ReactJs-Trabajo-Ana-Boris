@@ -2,7 +2,7 @@
     {
         "id": 1,
         "titulo": "Kaguya-sama",
-        "imagen": "../../public/remeras/Kaguya.png",
+        "imagen": "../../remeras/Kaguya.png",
         "descripcion" :"Remera de algodón estampada en serigrafía. Talles en la Ultima imagen de este post.",
         "category" :"remera",
         "precio": 1500,
