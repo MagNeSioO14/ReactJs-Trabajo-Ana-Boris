@@ -1,5 +1,5 @@
 import ItemsListContainer from "../ItemListContainer/ItemListContainer"
-import './catalogo.scss'
+import './Catalogo.scss'
 import { Link } from "react-router-dom";
 
 const Catalogo = () => {
