@@ -1,4 +1,4 @@
-import Talles from "../../assets/Tabla de talles.jpeg";
+// import Talles from "../../assets/Tabla de talles.jpeg";
 import './NuestrosTalles.scss'
 
 export const NuestrosTalles = () => {
@@ -12,7 +12,7 @@ export const NuestrosTalles = () => {
                    asi poder elegir la medida que te corresponde según nuestros talles.
                 </p>
                 <h1>Tabla de talles</h1>
-                <img src={Talles} alt="tabla de talles"/>
+                <img src="../../Tabla de talles.jpeg" alt="tabla de talles"/>
             </div>
 
         </main>

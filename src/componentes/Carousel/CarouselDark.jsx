@@ -12,7 +12,7 @@ export const CarouselDark = () => {
                 <img src="../../carousel/23.png" alt="" />
             </Carousel.Item>
             <Carousel.Item>
-                <img src="../../carousel/remeras 2.jpg" alt="" />
+                <img src="../../carousel/Remeras 2.jpg" alt="" />
             </Carousel.Item>
 
         </Carousel>

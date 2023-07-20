@@ -1,7 +1,7 @@
 import { CartWidget } from "../CartWidget/CartWidget";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import logoZeuz from '../../assets/logoZeuz.png'
+// import {logoZeuz} from '../../assets/logoZeuz.png'
 import { Link } from "react-router-dom";
 
 
@@ -26,7 +26,7 @@ export const Header = () => {
 
                     <div className="headerLogo">
                         <a href="">
-                            <img className="logo" src={logoZeuz} alt="" />
+                            <img className="logo" src="../../LogoZeuz.png" alt="" />
                         </a>
                     </div>
 

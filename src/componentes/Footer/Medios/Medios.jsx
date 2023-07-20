@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import LogoInsta from "../../../Assets/instLogo.png";
-import LogoFace from "../../../Assets/facelogo.png";
+//import LogoInsta from "../../../Assets/instLogo.png";
+//import LogoFace from "../../../Assets/facelogo.png";
 
 export const Medios = () => {
 
@@ -19,10 +19,10 @@ export const Medios = () => {
                 <h4 className="hFooterEstilos">Contactanos</h4>
 
                 <Link to="https://www.instagram.com/zeuz_rw/" target="_blank">
-                    <img src={LogoInsta} alt="Instagram" className="logoRedes"/>
+                    <img src="../../../instLogo.png" alt="Instagram" className="logoRedes"/>
                 </Link>
                 <Link to="https://www.facebook.com/zeuzrw" target="_blank">
-                    <img src={LogoFace} alt="Facebook" className="logoRedes"/>
+                    <img src="../../../facelogo.png" alt="Facebook" className="logoRedes"/>
                 </Link>
             </ul>
 

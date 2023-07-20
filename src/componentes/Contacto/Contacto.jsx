@@ -1,8 +1,8 @@
 import './Contacto.scss';
-import Face from "../../assets/contactoLogo/facelogo1.png";
-import Insta from "../../assets/contactoLogo/instagramlogo.png";
-import Mail from "../../assets/contactoLogo/mail-logo.png";
-import Ubicacion from "../../assets/contactoLogo/ubicacionlogo.png";
+// import Face from "../../assets/contactoLogo/facelogo1.png";
+// import Insta from "../../assets/contactoLogo/instagramlogo.png";
+// import Mail from "../../assets/contactoLogo/mail-logo.png";
+// import Ubicacion from "../../assets/contactoLogo/ubicacionlogo.png";
 
 export const Contacto = () => {
 
@@ -18,23 +18,23 @@ export const Contacto = () => {
                 <div className="conDiv">
                     <ul>
                         <li>
-                            <img src={Mail} alt="Correo" height="20" width="20" />
+                            <img src="../../contactoLogo/mail-logo.png" alt="Correo" height="20" width="20" />
                             <a href="mailto:Zeuz@hotmail.com">Zeuz@hotmail.com</a>
                         </li>
                         <li>
-                            <img src={Ubicacion} alt="Ubicacion" height="20" width="20" />
+                            <img src="../../contactoLogo/ubicacionlogo.png" alt="Ubicacion" height="20" width="20" />
                             Ubicacion
                         </li>
                     </ul>
                     <ul>
                         <li>
                             <a href="https://www.instagram.com/zeuz_rw/" target="_blank">
-                                <img src={Insta} alt="Instagram" width="20" height="20" />
+                                <img src="../../contactoLogo/instagramlogo.png" alt="Instagram" width="20" height="20" />
                                 Instagram</a>
                         </li>
                         <li>
                             <a href="https://www.facebook.com/zeuzrw" target="_blank">
-                                <img src={Face} alt="Facebook" width="20" height="20" />
+                                <img src="../../contactoLogo/facelogo1.png" alt="Facebook" width="20" height="20" />
                                 facebook</a>
                         </li>
                     </ul>
