@@ -12,13 +12,6 @@
             color: white;
         }
 
-        .produOrden {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
         div {
             margin: 5% 0%;
         }
@@ -36,8 +29,10 @@
         .separar {
             display: flex;
             justify-content: space-between;
+            align-items: center;
             margin: 10px 0px;
         }
+
 
         .btnAgregar {
             border-radius: 0px;
@@ -51,6 +46,27 @@
             font-size: 1.5rem;
         }
 
+        .btnColor {
+            color: black;
+            border-color: black;
+            background-color: bisque;
+        }
+        
+        .btnColor:hover {
+            background-color: rgba(255, 228, 196, 0);
+            color: white;
+            border-color: white;
+        }
 
+    }
+    .produOrden {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        p {
+            margin: 10% 0 0 0;
+        }
     }
 }

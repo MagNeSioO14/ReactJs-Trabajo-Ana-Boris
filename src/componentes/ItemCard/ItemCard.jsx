@@ -8,6 +8,7 @@ const ItemCard = ({item}) => {
             <img className="imgCard" src={item.imagen} alt={item.titulo} />
             <p>{item.descripcion}</p>
             <p>Preico: ${item.precio}</p>
+            {item.stock < 10 && <h4>Quedan {item.stock} unidades</h4> }
             <Link to={`/producto/${item.id}`} className="btn btn-primary linkCard">Ver mas</Link>
         </div>
     )

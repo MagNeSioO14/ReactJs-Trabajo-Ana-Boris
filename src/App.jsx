@@ -11,32 +11,40 @@ import Catalogo from "./componentes/Catalogo/Catalogo";
 import { Nosotros } from './componentes/Nosotros/Nosotros';
 import { NuestrosTalles } from './componentes/NuestrosTalles/NuestrosTalles';
 import { Contacto } from './componentes/Contacto/Contacto';
+import Checkout from './componentes/Checkout/Checkout';
+import { CartProvider } from './context/CartContext';
+import CartView from './componentes/CartView/CartView';
+
 
 function App() {
 
   return (
-    <BrowserRouter>
-      <Header />
-      
-      <Routes> 
-        <Route path='/' element={
-        <div>
-          <CarouselDark/>
-          <ItemsListContainer />
-        </div>
-        }/>
+    <CartProvider>
+      <BrowserRouter>
+        <Header />
 
-        <Route path='/producto/:itemId' element={<ItemDetailContainer/>}/>
-        <Route path='/catalogo' element={<Catalogo/>}/>
-        <Route path='/nosotros' element={<Nosotros/>} />
-        <Route path='/talles' element={<NuestrosTalles/>}/>
-        <Route path='/contacto' element={<Contacto/>} />
-        <Route path='/catalogo/:categoryId' element={<Catalogo/>} />
+        <Routes>
+          <Route path='/' element={
+            <div>
+              <CarouselDark />
+              <ItemsListContainer />
+            </div>
+          } />
 
-      </Routes>
+          <Route path='/producto/:itemId' element={<ItemDetailContainer />} />
+          <Route path='/compra' element={<CartView/>} />
+          <Route path='/catalogo' element={<Catalogo />} />
+          <Route path='/nosotros' element={<Nosotros />} />
+          <Route path='/talles' element={<NuestrosTalles />} />
+          <Route path='/contacto' element={<Contacto />} />
+          <Route path='/catalogo/:categoryId' element={<Catalogo />} />
+          <Route path='/checkout' element={<Checkout />} />
 
-      <Footer/>
-    </BrowserRouter>
+        </Routes>
+
+        <Footer />
+      </BrowserRouter>
+    </CartProvider>
   )
 }
 
