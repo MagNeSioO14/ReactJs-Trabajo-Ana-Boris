@@ -1,77 +1,130 @@
-import { addDoc, collection } from "firebase/firestore"
+import { addDoc, collection, getDocs, writeBatch, query, where, documentId } from "firebase/firestore"
 import { useContext, useState } from "react"
 import { db } from "../../firebase/config"
+import { CartContext } from "../../context/CartContext"
+import { Link, Navigate } from "react-router-dom"
+import { Formik, Form, Field, ErrorMessage } from "formik"
+import * as Yup from 'yup'
+import './Checkout.scss'
+
+const schema = Yup.object().shape({
+    nombre: Yup.string()
+            .min(4, "El nombre es muy corto")
+            .max(20, "Maximo 20 Caracteres")
+            .required("Este campo es Obligatorio"),
+    direccion: Yup.string()
+            .min(8, "La direccion es muy corta")
+            .max(40, "Maximo 40 Caracteres")
+            .required("Este campo es Obligatorio"),
+    email: Yup.string()
+            .min(4, "El nombre es muy corto")
+            .max(20, "Maximo 40 Caracteres")
+            .required("Este campo es Obligatorio")
+            .email("El email es invalido")
+})
+
 
 const Checkout = () => {
-    const [values, setValues] = useState ({
-        nombre: '',
-        direccion: '',
-        email: ''
-    })
+    const { cart, totalCompra, vaciarCarrito } = useContext(CartContext)
+    const [orderId, setOrderId] = useState(null)
+    const [loading, setLoading] = useState(false)
 
-    const handleInputChange = (e) => {
-        setValues({
-            ...values,
-            [e.target.name] : e.target.value
-        })
-    }
+    // const [values, setValues] = useState({
+    //     nombre: '',
+    //     direccion: '',
+    //     email: ''
+    // })
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
+    const handleSubmit = async (values) => {
+        setLoading(true)
         console.log("submit")
 
         const orden = {
             cliente: values,
-            items: 'cart.map(item => ({id: item.id, precio: item.precio, cantidad: item.cantidad, nombre: item.nombre}))',
-            total: 'totalCompra()',
+            items: cart.map(item => ({ id: item.id, precio: item.precio, cantidad: item.cantidad, nombre: item.titulo })),
+            total: totalCompra(),
             fyh: new Date()
         }
 
-        //enviarlo a firebase
-        const orderRef = collection(db, "orders")
+        console.log(orden);
 
-        addDoc(orderRef, orden)
-            .then((doc) => {
-                console.log(doc.id);
-            })
+        const batch = writeBatch(db)
+        const productosRef = collection(db, "productos")
+        const q = query(productosRef, where(documentId(), "in", cart.map(item => item.id)))
+        const sinStock = []
+        const orderRef = collection(db, "ordenes")
+
+        const productos = await getDocs(q)
+
+        productos.docs.forEach((doc) => {
+            const item = cart.find(prod => prod.id === doc.id)
+            const stock = doc.data().stock
+
+            if (stock >= item.cantidad) {
+                batch.update(doc.ref, {
+                    stock: stock - item.cantidad
+                })
+            } else {
+                sinStock.push(item)
+            }
+        })
+
+        if (sinStock.length === 0) {
+            await batch.commit()
+            const doc = await addDoc(orderRef, orden)
+            vaciarCarrito();
+            setOrderId(doc.id)
+        } else {
+            alert("Sin stock")
+        }
+        setLoading(false)
+    }
+
+    if (orderId) {
+        return (
+            <div className="container checkOutDiv">
+                <h2>Tu compra se registro con exito</h2>
+                <hr />
+                <span className="pCompra"> Tu numero de orden es: <strong>{orderId} </strong></span>
+                <br />
+                <Link className="btn mt-3 btnStyle" to="/">Volver</Link>
+            </div>
+        )
+    }
+
+    if (cart.length === 0) {
+        return <Navigate to="/" />
     }
 
     return (
-        <div>
+        <div className="container checkOutDiv" >
             <h2>checkout</h2>
             <hr />
 
-            <form onSubmit={handleSubmit}>
-                <input
-                    onChange={handleInputChange}
-                    value={values.nombre}
-                    type="text"
-                    className="form-control my-2"
-                    placeholder="Nombre"
-                    name="nombre"
-                />
+            <Formik
+                initialValues={{
+                    nombre: '',
+                    direccion: '',
+                    email: ''
+                }}
+                onSubmit={handleSubmit}
+                validationSchema={schema}
+            >
+                {() => (
+                    <Form>
+                        <ErrorMessage className="errorStyle" name="nombre" component="p"/>
+                        <Field className="form-control my-3" type="text" name="nombre"  placeholder="Nombre"/>
 
-                <input
-                    onChange={handleInputChange}
-                    value={values.direccion}
-                    type="text"
-                    className="form-control my-2"
-                    placeholder="Direccion"
-                    name="direccion"
-                />
+                        <ErrorMessage className="errorStyle" name="direccion" component="p"/>
+                        <Field className="form-control my-3" type="text" name="direccion" placeholder="Direccion"/>
 
-                <input
-                    onChange={handleInputChange}
-                    value={values.email}
-                    type="email"
-                    className="form-control my-2"
-                    placeholder="Tu correo"
-                    name="email"
-                />
-            </form>
+                        <ErrorMessage className="errorStyle" name="email" component="p"/>
+                        <Field className="form-control my-3" type="email" name="email" placeholder="Email"/>
 
-            <button className="btn btn-success">confirmar</button>
-
+                        <button disabled={loading} className="btn mb-3 btnStyle" type="submit">confirmar</button>
+                    </Form>
+                )}
+            </Formik>
         </div>
     )
 }

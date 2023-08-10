@@ -4,13 +4,7 @@
     align-items: center;
     padding: 0px 10%;
     background-color: black;
-
-    h1,
-    p,
-    label {
-        color: white;
-    }
-
+    color: white;
 
     .formTamaño {
         width: 300px;
@@ -42,21 +36,18 @@
 
     .contactorder {
         margin: 50px 0px;
-    }
+        .conDiv {
+            display: flex;
+            margin: 15px 0;
 
-    .conDiv {
-        display: flex;
-        margin: 15px 0;
+            li {
+                margin: 0px 15px 10px 0px;
+                list-style-type: none;
 
-        li {
-            margin: 0px 15px 10px 0px;
-            list-style-type: none;
-
-            a {
-                text-decoration: none;
+                a {
+                    text-decoration: none;
+                }
             }
         }
     }
-
-
 }

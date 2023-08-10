@@ -1,8 +1,4 @@
 import './Contacto.scss';
-// import Face from "../../assets/contactoLogo/facelogo1.png";
-// import Insta from "../../assets/contactoLogo/instagramlogo.png";
-// import Mail from "../../assets/contactoLogo/mail-logo.png";
-// import Ubicacion from "../../assets/contactoLogo/ubicacionlogo.png";
 
 export const Contacto = () => {
 
@@ -22,8 +18,7 @@ export const Contacto = () => {
                             <a href="mailto:Zeuz@hotmail.com">Zeuz@hotmail.com</a>
                         </li>
                         <li>
-                            <img src="../../contactoLogo/ubicacionlogo.png" alt="Ubicacion" height="20" width="20" />
-                            Ubicacion
+                            <img src="../../contactoLogo/ubicacionlogo.png" alt="Ubicacion" height="20" width="20" /><a>Ubicacion</a>
                         </li>
                     </ul>
                     <ul>

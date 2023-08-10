@@ -1,20 +1,27 @@
 .catalogoDiv {
     margin: 0 auto;
-    background-color: black;
+    background-color: rgb(0, 0, 0);
 
     .divCard {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        color: white;
+
         .imgCard {
             width: 95%;
         }
-        h3,p{
-            color: rgba(255, 255, 255, 0.856);
-        } 
+        h4{
+            font-size: 1rem;
+            color: red;
+        }
+        .btnVerMas{
+            background-color: bisque;
+            font-weight: bold;
+        }
+        .btnVerMas:hover{
+            color: black;
+        }
     }
-    h2{
-        color: rgba(255, 255, 255, 0.856);
-    } 
 }

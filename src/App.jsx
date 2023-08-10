@@ -1,6 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Header } from "./componentes/Header/Header"
 import ItemsListContainer from "./componentes/ItemListContainer/ItemListContainer"
+import './App.css'
 import './componentes/Header/Header.scss'
 import './componentes/ItemListContainer/ItemListContainer.scss'
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -14,14 +15,16 @@ import { Contacto } from './componentes/Contacto/Contacto';
 import Checkout from './componentes/Checkout/Checkout';
 import { CartProvider } from './context/CartContext';
 import CartView from './componentes/CartView/CartView';
+import { Menu } from './componentes/Header/Menu/Menu';
 
 
 function App() {
 
   return (
     <CartProvider>
-      <BrowserRouter>
+      <BrowserRouter> 
         <Header />
+        <Menu />
 
         <Routes>
           <Route path='/' element={

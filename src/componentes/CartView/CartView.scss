@@ -1,0 +1,85 @@
+.cartViewDiv {
+    background-color: rgb(0, 0, 0);
+    color: white;
+    h2{
+        text-align: center;
+        margin-top: 10px;
+    }
+
+
+    .cartViewOrder {
+        display: flex;
+        justify-content: space-around;
+
+        .productOrder{
+            width: 60%;
+        }
+        
+        .articuloCart {
+            display: flex;
+            align-items: center;
+            border-radius: 10px;
+            background-color: #002235;
+            margin: 10px 0 10px 0;
+            //border-style: groove;
+
+            .imgDiv {
+                display: flex;
+                justify-content: left;
+                margin: 2%;
+                width: 15vw;
+
+                img {
+                    width: 15vw;
+                }
+            }
+
+            .descrptionDiv {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+        }
+
+        .totalCompra{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #002235;
+            border-radius: 10px;
+            margin: 10px 0 10px 0;
+            width: 25vw;
+            height: 25vh;
+            position: sticky;
+            top: 100px;
+            z-index: 10;
+        }
+    }
+    .btnStyls{
+        background-color: bisque;
+    }
+    .btnStyls:hover{
+        color: black;
+    }
+}
+
+.outOfProduct{
+    background-color: rgb(0, 0, 0);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+    h2{
+        margin-top: 10px;
+    }
+    .btnStyls{
+        background-color: bisque;
+    }
+    .btnStyls:hover{
+        color: black;
+    }
+}
+

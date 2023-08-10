@@ -9,7 +9,7 @@ const ItemCard = ({item}) => {
             <p>{item.descripcion}</p>
             <p>Preico: ${item.precio}</p>
             {item.stock < 10 && <h4>Quedan {item.stock} unidades</h4> }
-            <Link to={`/producto/${item.id}`} className="btn btn-primary linkCard">Ver mas</Link>
+            <Link to={`/producto/${item.id}`} className="btn btnVerMas m-2">Ver mas</Link>
         </div>
     )
 }

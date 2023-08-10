@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 // import {logoZeuz} from '../../assets/logoZeuz.png'
 import { Link } from "react-router-dom";
+import { AiOutlineUser } from "react-icons/ai"
 
 
 
@@ -30,16 +31,7 @@ export const Header = () => {
                         </a>
                     </div>
 
-                    <CartWidget />
-
-                </nav>
-
-                <nav className="headerNav">
-                    <Link className="navLink" to="/">Home</Link>
-                    <Link className="navLink" to="/catalogo">Catalogo</Link>
-                    <Link className="navLink" to="/nosotros">Nosotros</Link>
-                    <Link className="navLink" to="/contacto">Contacto</Link>
-                    <Link className="navLink" to="/talles">Nuestros Talles</Link>
+                    <AiOutlineUser color="white" size="2rem"/>
                 </nav>
             </div>
         </header>

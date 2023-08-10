@@ -27,24 +27,11 @@ const ItemDetail = ({ item }) => {
 
             <div className="produTamaño">
                 <h3>{item.titulo}</h3>
-                <p>{item.precio}</p>
+                <p>Precio: ${item.precio}</p>
                 <span><strong>10%</strong> de descuento pagando por transferencia bancaria</span>
-                {/* <div>
-                    <div className="separar">
-                        <span>Talle:</span>
-                        <select name="Atributo" id="">
-                            <option value="S">S</option>
-                            <option value="M">M</option>
-                            <option value="L">L</option>
-                            <option value="XL">Xl</option>
-                            <option value="XXL">XXL</option>
-                        </select>
-                    </div>
-                </div> */}
-
                 {
                     estaAgregado(item.id)
-                        ? <Link className="btn btn-success" to="/compra"> Terminar mi Comprar </Link>
+                        ? <Link className="btn mt-5 btnAgregar" to="/compra"> Terminar mi Comprar </Link>
                         : <ItemCount
                             max={item.stock}
                             counter={cantidad}
