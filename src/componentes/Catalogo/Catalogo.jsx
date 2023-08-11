@@ -12,9 +12,10 @@ const Catalogo = () => {
                 <ul>
                     <li><Link className="catLink" to="/catalogo/remera">Remeras</Link></li>
                     <li><Link className="catLink" to="/catalogo/buzos">Buzos</Link></li>
-                    <li><Link className="catLink" to="/catalogo/">Pantalones</Link></li>
-                    <li><Link className="catLink" to="/catalogo/">Accesorios</Link></li>
-                    <li><Link className="catLink"to="/catalogo/">Tazas</Link></li>
+                    <li><Link className="catLink" to="/catalogo/pantalones">Pantalones</Link></li>
+                    <li><Link className="catLink" to="/catalogo/accesorios">Accesorios</Link></li>
+                    <li><Link className="catLink"to="/catalogo/tazas">Tazas</Link></li>
+                    <li><Link className="catLink" to="/catalogo">Limpiar</Link></li>
                 </ul>
             </div>
 

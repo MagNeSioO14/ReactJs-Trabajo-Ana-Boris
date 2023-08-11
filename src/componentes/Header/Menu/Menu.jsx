@@ -11,6 +11,7 @@ export const Menu = () => {
             <Link className="navLink" to="/nosotros">Nosotros</Link>
             <Link className="navLink" to="/contacto">Contacto</Link>
             <Link className="navLink" to="/talles">Nuestros Talles</Link>
+            <Link className="navLink" to="/agregar">Agregar producto</Link>
             <CartWidget/>
         </nav>
     )

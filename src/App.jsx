@@ -16,6 +16,7 @@ import Checkout from './componentes/Checkout/Checkout';
 import { CartProvider } from './context/CartContext';
 import CartView from './componentes/CartView/CartView';
 import { Menu } from './componentes/Header/Menu/Menu';
+import AgregarProducto from './componentes/AgregarProducto/AgregarProducto';
 
 
 function App() {
@@ -42,6 +43,7 @@ function App() {
           <Route path='/contacto' element={<Contacto />} />
           <Route path='/catalogo/:categoryId' element={<Catalogo />} />
           <Route path='/checkout' element={<Checkout />} />
+          <Route path='/agregar' element={ <AgregarProducto/> } />
 
         </Routes>
 

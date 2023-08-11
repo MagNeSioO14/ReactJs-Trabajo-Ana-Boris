@@ -20,7 +20,14 @@ const schema = Yup.object().shape({
             .min(4, "El nombre es muy corto")
             .max(20, "Maximo 40 Caracteres")
             .required("Este campo es Obligatorio")
-            .email("El email es invalido")
+            .email("Ingresa un correo electrónico válido")
+            .lowercase(),
+    confirmarEmail: Yup.string()
+            .email("Ingresa un correo electrónico válido")
+            .required("Este campo es Obligatorio")
+            .oneOf([Yup.ref('email'),null], "Los correos electrónicos deben coincidir" )
+            .lowercase()
+
 })
 
 
@@ -105,7 +112,8 @@ const Checkout = () => {
                 initialValues={{
                     nombre: '',
                     direccion: '',
-                    email: ''
+                    email: '',
+                    confirmarEmail: ''
                 }}
                 onSubmit={handleSubmit}
                 validationSchema={schema}
@@ -120,6 +128,9 @@ const Checkout = () => {
 
                         <ErrorMessage className="errorStyle" name="email" component="p"/>
                         <Field className="form-control my-3" type="email" name="email" placeholder="Email"/>
+
+                        <ErrorMessage className="errorStyle" name="confirmarEmail" component="p"/>
+                        <Field className="form-control my-3" type="email" name="confirmarEmail" placeholder="Confirmar Email"/>
 
                         <button disabled={loading} className="btn mb-3 btnStyle" type="submit">confirmar</button>
                     </Form>

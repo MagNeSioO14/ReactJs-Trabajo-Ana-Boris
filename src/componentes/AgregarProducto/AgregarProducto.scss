@@ -1,0 +1,27 @@
+.divAgregar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .formAgregar {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        label {
+            font-size: 1.2rem;
+        }
+
+        .errorStyle {
+            color: red;
+            font-size: 0.9rem;
+        }
+
+        button{
+            width: 40%;
+            margin: 16px 0 20px 0;
+        }
+    }
+}

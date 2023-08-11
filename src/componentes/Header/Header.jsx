@@ -30,7 +30,6 @@ export const Header = () => {
                             <img className="logo" src="../../LogoZeuz.png" alt="" />
                         </a>
                     </div>
-
                     <AiOutlineUser color="white" size="2rem"/>
                 </nav>
             </div>
