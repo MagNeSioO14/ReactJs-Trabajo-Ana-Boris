@@ -25,6 +25,7 @@ const schema = Yup.object().shape({
     descripcion: Yup.string()
         .required("Este campo es Obligatorio"),
     imagen: Yup.mixed()
+        .required("Este campo es Obligatorio")
         .test('fileType', 'Solo se permiten imágenes', value => {
             if (!value) return true;
             return ['image/jpeg', 'image/png'].includes(value.type);

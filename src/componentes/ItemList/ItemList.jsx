@@ -4,7 +4,7 @@ const ItemList = ({productos}) => {
 
     return (
         <div className="container">
-            <div className="row">
+            <div className="row centrarProductos">
                 {
                     productos.map((prod) => <ItemCard key={prod.id} item={prod} />)
                 }

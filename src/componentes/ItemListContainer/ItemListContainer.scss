@@ -1,6 +1,13 @@
 .catalogoDiv {
-    margin: 0 auto;
     background-color: rgb(0, 0, 0);
+    margin: 2% 0%;
+
+    .centrarProductos{
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+
+    }
 
     .divCard {
         display: flex;
@@ -23,5 +30,6 @@
         .btnVerMas:hover{
             color: black;
         }
+        
     }
 }
