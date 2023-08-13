@@ -1,0 +1,109 @@
+.loginestilos {
+    display: flex;
+
+    button {
+        background-color: black;
+        color: bisque;
+        font-weight: bold;
+        padding: 5px 10px;
+        border-radius: 4px;
+        border-color: bisque;
+        margin-top: 10px;
+    }
+    button:hover{
+        background-color: black;
+        color: bisque;
+        border-color: bisque;
+    }
+
+    h1{
+        color: white;
+        font-size: 1.4rem;
+        margin: 0;
+        padding: 10px;
+    }
+
+
+    .modal {
+        position: fixed;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 100;
+    
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(49, 49, 49, 0.4);
+        }
+    
+        .modalContenido {
+            background-color: white;
+            padding: 20px;
+            border: 1px solid #888;
+            border-radius: 8px;
+            width: 25%;
+            z-index: 1;
+            text-align: center;
+            position: relative;
+    
+            .cerrarBoton {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                padding: 5px 10px;
+                background-color: transparent;
+                border: none;
+                cursor: pointer;
+                font-size: 20px;
+                font-weight: bold;
+                color: rgb(250, 29, 29);
+            }
+    
+            .fromStilo {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+    
+                h2 {
+                    margin-top: 0;
+                }
+    
+                label {
+                    font-weight: bold;
+                    display: block;
+                    margin-bottom: 5px;
+                }
+    
+    
+                .form-control {
+                    width: 95%;
+                    padding: 10px;
+                    border: 1px solid rgb(51, 48, 48);
+                    border-radius: 4px;
+                }
+    
+                button {
+                    background-color: bisque;
+                    color: black;
+                    font-weight: bold;
+                    padding: 10px 20px;
+                    border-radius: 4px;
+                    border-color: black;
+                    margin-top: 10px;
+                }
+    
+            }
+        }
+    }
+
+}

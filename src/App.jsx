@@ -17,39 +17,42 @@ import { CartProvider } from './context/CartContext';
 import CartView from './componentes/CartView/CartView';
 import { Menu } from './componentes/Header/Menu/Menu';
 import AgregarProducto from './componentes/AgregarProducto/AgregarProducto';
+import { AuthProvider } from './context/AuthContext';
 
 
 function App() {
 
   return (
-    <CartProvider>
-      <BrowserRouter> 
-        <Header />
-        <Menu />
+    <AuthProvider>
+      <CartProvider>
+        <BrowserRouter>
+          <Header />
+          <Menu />
 
-        <Routes>
-          <Route path='/' element={
-            <div>
-              <CarouselDark />
-              <ItemsListContainer />
-            </div>
-          } />
+          <Routes>
+            <Route path='/' element={
+              <div>
+                <CarouselDark />
+                <ItemsListContainer />
+              </div>
+            } />
 
-          <Route path='/producto/:itemId' element={<ItemDetailContainer />} />
-          <Route path='/compra' element={<CartView/>} />
-          <Route path='/catalogo' element={<Catalogo />} />
-          <Route path='/nosotros' element={<Nosotros />} />
-          <Route path='/talles' element={<NuestrosTalles />} />
-          <Route path='/contacto' element={<Contacto />} />
-          <Route path='/catalogo/:categoryId' element={<Catalogo />} />
-          <Route path='/checkout' element={<Checkout />} />
-          <Route path='/agregar' element={ <AgregarProducto/> } />
+            <Route path='/producto/:itemId' element={<ItemDetailContainer />} />
+            <Route path='/compra' element={<CartView />} />
+            <Route path='/catalogo' element={<Catalogo />} />
+            <Route path='/nosotros' element={<Nosotros />} />
+            <Route path='/talles' element={<NuestrosTalles />} />
+            <Route path='/contacto' element={<Contacto />} />
+            <Route path='/catalogo/:categoryId' element={<Catalogo />} />
+            <Route path='/checkout' element={<Checkout />} />
+            <Route path='/agregar' element={<AgregarProducto />} />
 
-        </Routes>
+          </Routes>
 
-        <Footer />
-      </BrowserRouter>
-    </CartProvider>
+          <Footer />
+        </BrowserRouter>
+      </CartProvider>
+    </AuthProvider>
   )
 }
 
