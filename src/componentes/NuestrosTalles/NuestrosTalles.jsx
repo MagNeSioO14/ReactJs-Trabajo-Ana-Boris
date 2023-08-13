@@ -1,4 +1,3 @@
-// import Talles from "../../assets/Tabla de talles.jpeg";
 import './NuestrosTalles.scss'
 
 export const NuestrosTalles = () => {

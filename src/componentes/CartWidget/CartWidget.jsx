@@ -1,4 +1,3 @@
-// import LogoCart from '../../assets/CartLogo.png'
 import { Link } from 'react-router-dom'
 import './CartWidget.scss'
 import { useContext } from 'react'
@@ -16,5 +15,3 @@ export const CartWidget = () => {
         </Link>
     )
 }
-
-// className="imgCart"

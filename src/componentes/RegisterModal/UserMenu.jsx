@@ -49,7 +49,7 @@ const UserMenu = () => {
                 : <RegisterModal toggleModal={toggleModal} modalOpen={modalOpen} register={handleRegister} />
             }
             {usuario
-                ? <button className='btn m-1' onClick={handleLogout} >Login</button>
+                ? <button className='btn m-1' onClick={handleLogout} >Logout</button>
                 : <LoginModal toggleLogin={toggleLogin} loginOpen={loginOpen} login={handleLogin} />             
             }
         </div>

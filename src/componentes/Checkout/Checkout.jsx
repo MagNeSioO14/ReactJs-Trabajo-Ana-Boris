@@ -36,12 +36,6 @@ const Checkout = () => {
     const [orderId, setOrderId] = useState(null)
     const [loading, setLoading] = useState(false)
 
-    // const [values, setValues] = useState({
-    //     nombre: '',
-    //     direccion: '',
-    //     email: ''
-    // })
-
     const handleSubmit = async (values) => {
         setLoading(true)
         console.log("submit")

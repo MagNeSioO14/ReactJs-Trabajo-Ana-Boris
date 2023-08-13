@@ -16,13 +16,10 @@ const ItemsListContainer = () => {
     useEffect(() => {
         setLoading(true)
 
-        // 1.-Armar la referencia (sync)
         const productosRef = collection(db, "productos")
         const q = categoryId
                     ? query(productosRef, where('category', '==', categoryId))
                     : productosRef
-
-        // 2.-Llamar a esa referencia (async)
         getDocs(q)
             .then((resp) => {
                 const docs = resp.docs.map((doc) => {

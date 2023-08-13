@@ -1,9 +1,3 @@
-//import MasterCard from '../../../assets/logosTarjetas/mastercard.png';
-//import Visa from '../../../assets/logosTarjetas/visa.png';
-//import Naranja from '../../../assets/logosTarjetas/tarjeta-naranja.png';
-//import MercadoPago from '../../../assets/logosTarjetas/mercadopago.png';
-//import RapiPago from '../../../assets/logosTarjetas/rapipago.png';
-//import Oca from "../../../assets/logosEnvios/Oca.png";
 
 export const Pagos = () => {
 

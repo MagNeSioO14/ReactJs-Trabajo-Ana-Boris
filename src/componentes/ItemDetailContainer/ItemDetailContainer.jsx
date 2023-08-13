@@ -15,10 +15,7 @@ const ItemDetailContainer = () => {
     useEffect(() => {
         setLoading(true)
 
-        //1- armar la ref
         const itemRef = doc(db, "productos", itemId)
-
-        //2- llamar la ref
         getDoc(itemRef)
             .then((doc) => {
                 setItem({

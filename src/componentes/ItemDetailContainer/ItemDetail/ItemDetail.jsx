@@ -39,8 +39,6 @@ const ItemDetail = ({ item }) => {
                             agregar={handleAgregar}
                         />
                 }
-
-
             </div>
         </div>
     )

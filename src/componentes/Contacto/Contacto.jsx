@@ -46,7 +46,6 @@ export const Contacto = () => {
                     <input type="number" placeholder="Ingrese su Telefono" />
                     <textarea name="" id="" cols="30" rows="10" placeholder="Ingrese su mensaje"></textarea>
 
-                    {/* <!-- Botones --> */}
                     <input type="submit" />
                     <input type="reset" />
                 </form>

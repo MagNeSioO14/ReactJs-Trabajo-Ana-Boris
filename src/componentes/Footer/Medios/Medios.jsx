@@ -1,6 +1,4 @@
 import { Link } from "react-router-dom";
-//import LogoInsta from "../../../Assets/instLogo.png";
-//import LogoFace from "../../../Assets/facelogo.png";
 
 export const Medios = () => {
 
