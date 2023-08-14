@@ -19,7 +19,8 @@ convertidas a minusculas.
 
 Se subio el proyecto a Netlify y Vercel
 Dejo links:
+<br>
 https://zeuzindumentaria.netlify.app/
-<hr>
+<br>
 https://react-js-trabajo-ana-boris-854a.vercel.app/
 
