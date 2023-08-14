@@ -38,7 +38,6 @@ const Checkout = () => {
 
     const handleSubmit = async (values) => {
         setLoading(true)
-        console.log("submit")
 
         const orden = {
             cliente: values,
@@ -46,8 +45,6 @@ const Checkout = () => {
             total: totalCompra(),
             fyh: new Date()
         }
-
-        console.log(orden);
 
         const batch = writeBatch(db)
         const productosRef = collection(db, "productos")

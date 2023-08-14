@@ -2,7 +2,7 @@
     background-color: rgb(0, 0, 0);
     margin: 2% 0%;
 
-    .centrarProductos{
+    .centrarProductos {
         display: flex;
         justify-content: center;
         align-items: flex-start;
@@ -13,23 +13,60 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
+        justify-content: space-between;
         color: white;
+        width: 300px;
+        height: 550px;
 
-        .imgCard {
-            width: 95%;
-        }
-        h4{
+
+        h4 {
             font-size: 1rem;
             color: red;
         }
-        .btnVerMas{
+
+        .btnVerMas {
             background-color: bisque;
             font-weight: bold;
         }
-        .btnVerMas:hover{
+
+        .btnVerMas:hover {
             color: black;
         }
-        
+
+        .imagenDiv {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 300px;
+            height: 295px;
+
+            .imgCard {
+                width: 250px;
+                height: 295px;
+                object-fit: cover;
+            }
+
+            .outOfStock {
+                position: absolute;
+                text-align: center;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: rgba(255, 255, 255, 0.4);
+                color: black;
+                font-weight: bolder;
+                font-size: 1.5rem;
+            }
+        }
+    }
+
+    .divCard:hover {
+        border-radius: 8px;
+        box-shadow: 0 0 10px bisque;
     }
 }

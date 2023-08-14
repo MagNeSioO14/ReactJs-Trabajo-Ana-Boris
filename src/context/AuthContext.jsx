@@ -26,8 +26,6 @@ export const AuthProvider = ({ children }) => {
             userId: respuesta.user.uid,
             IsAdmin: false
         })
-        console.log(respuesta);
-        console.log(docRef);
     }
 
     const login = async (email, password) => {

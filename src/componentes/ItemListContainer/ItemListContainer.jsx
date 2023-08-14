@@ -4,6 +4,7 @@ import ItemList from "../ItemList/ItemList";
 import './ItemListContainer.scss'
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { db } from "../../firebase/config";
+import Loader from "../Loader/Loader";
 
 
 const ItemsListContainer = () => {
@@ -11,7 +12,6 @@ const ItemsListContainer = () => {
     const [loading, setLoading] = useState(true)
 
     const { categoryId } = useParams()
-    console.log(categoryId)
 
     useEffect(() => {
         setLoading(true)
@@ -36,10 +36,10 @@ const ItemsListContainer = () => {
     }, [categoryId])
 
     return (
-        <div className="catalogoDiv">
+        <div  className="catalogoDiv">
             {
                 loading
-                    ? <h2>Cargando...</h2>
+                    ? <Loader/>
                     : <ItemList productos={productos} />
             }
         </div>

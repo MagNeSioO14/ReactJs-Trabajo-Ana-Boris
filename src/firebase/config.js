@@ -2,8 +2,8 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { getAuth } from "firebase/auth"
-import { getStorage , ref , uploadBytes, getDownloadURL  } from "firebase/storage";
-import {v4} from 'uuid'
+import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import { v4 } from 'uuid'
 
 const firebaseConfig = {
   apiKey: "AIzaSyCmIAdB2V4wCWr_0iuVE34wqUtWEybxIU8",
@@ -20,8 +20,13 @@ export const storage = getStorage(app);
 export const auth = getAuth(app)
 
 export async function subirArchivo(file) {
-  const storageRef = ref(storage, v4())
-  await uploadBytes(storageRef, file)
-  const url = await getDownloadURL(storageRef)
-  return url
+  try {
+    const storageRef = ref(storage, v4())
+    await uploadBytes(storageRef, file)
+    const url = await getDownloadURL(storageRef)
+    return url
+  } catch (error) {
+    console.error("Error al subir el archivo:", error);
+    throw error;
+  }
 }

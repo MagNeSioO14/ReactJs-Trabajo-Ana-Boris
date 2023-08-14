@@ -21,11 +21,11 @@ import { AuthProvider } from './context/AuthContext';
 
 
 function App() {
-
   return (
     <AuthProvider>
       <CartProvider>
         <BrowserRouter>
+
           <Header />
           <Menu />
 
@@ -45,7 +45,7 @@ function App() {
             <Route path='/contacto' element={<Contacto />} />
             <Route path='/catalogo/:categoryId' element={<Catalogo />} />
             <Route path='/checkout' element={<Checkout />} />
-            <Route path='/agregar' element={<AgregarProducto />} />
+            {<Route path='/agregar' element={<AgregarProducto />} />}
 
           </Routes>
 

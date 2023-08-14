@@ -4,6 +4,7 @@ import ItemDetail from "./ItemDetail/ItemDetail"
 import './ItemDetailContainer.scss'
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../../firebase/config";
+import Loader from "../Loader/Loader";
 
 
 const ItemDetailContainer = () => {
@@ -31,7 +32,8 @@ const ItemDetailContainer = () => {
         <main>
             {
                 loading
-                    ? <h2>Cargando...</h2>
+                    ? <Loader/>
+                    // ? <h2>Cargando...</h2>
                     : <ItemDetail item={item}/>
             }
         </main>
