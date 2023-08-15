@@ -31,7 +31,7 @@ const ItemDetail = ({ item }) => {
                 <span><strong>10%</strong> de descuento pagando por transferencia bancaria</span>
                 {
                     estaAgregado(item.id)
-                        ? <Link className="btn mt-5 btnAgregar" to="/compra"> Terminar mi Comprar </Link>
+                        ? <Link className="btn mt-5 btnAgregar" to="/cartView"> Terminar mi Comprar </Link>
                         : <ItemCount
                             max={item.stock}
                             counter={cantidad}

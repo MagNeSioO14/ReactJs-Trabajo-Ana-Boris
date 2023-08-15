@@ -41,7 +41,7 @@ const Checkout = () => {
 
         const orden = {
             cliente: values,
-            items: cart.map(item => ({ id: item.id, precio: item.precio, cantidad: item.cantidad, nombre: item.titulo })),
+            items: cart.map(item => ({ id: item.id, precio: item.precio, cantidad: item.cantidad, nombre: item.titulo, imagen: item.imagen })),
             total: totalCompra(),
             fyh: new Date()
         }

@@ -44,12 +44,12 @@ const AgregarProducto = () => {
 
         const orden = {
             ...values,
-            imagen: imgref,
-            precio: "$" + values.precio
+            imagen: imgref
         }
         const productosRef = collection(db, "productos")
         addDoc(productosRef, orden)
         setLoading(false)
+        resetForm();
     }
 
     return (

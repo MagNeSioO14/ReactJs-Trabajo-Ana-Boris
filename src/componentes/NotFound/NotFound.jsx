@@ -5,7 +5,7 @@ import './NotFound.scss'
 export const NotFound = () => {
 
     return (
-        <div className="errorStyle">
+        <div className="divErrorStyle">
             <h1>Error 404 <br></br> Not Found</h1>
             <div>
                 <img src="../../../yamcha_error_NotFound.png" alt="" />

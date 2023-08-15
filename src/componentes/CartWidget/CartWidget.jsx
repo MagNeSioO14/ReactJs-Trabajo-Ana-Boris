@@ -9,7 +9,7 @@ export const CartWidget = () => {
     const { totalCantidad } = useContext(CartContext)
 
     return(
-        <Link to="/compra" className="linkCart">
+        <Link to="/cartView" className="linkCart">
             <AiOutlineShoppingCart color='black' size="3rem"/>
             <span>{totalCantidad()}</span>
         </Link>

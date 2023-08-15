@@ -19,6 +19,7 @@ import { Menu } from './componentes/Header/Menu/Menu';
 import AgregarProducto from './componentes/AgregarProducto/AgregarProducto';
 import { useAuth } from './context/AuthContext';
 import { NotFound } from './componentes/NotFound/NotFound';
+import VerMiCompra from './componentes/VerMiCompra/VerMiCompra';
 
 
 function App() {
@@ -36,8 +37,9 @@ function App() {
               <ItemsListContainer />
             </div>
           } />
+
           <Route path='/producto/:itemId' element={<ItemDetailContainer />} />
-          <Route path='/compra' element={<CartView />} />
+          <Route path='/cartView' element={<CartView />} />
           <Route path='/catalogo' element={<Catalogo />} />
           <Route path='/nosotros' element={<Nosotros />} />
           <Route path='/talles' element={<NuestrosTalles />} />
@@ -45,7 +47,11 @@ function App() {
           <Route path='/catalogo/:categoryId' element={<Catalogo />} />
           <Route path='/checkout' element={<Checkout />} />
           <Route path='/agregar' element={isAdmin ? <AgregarProducto /> : <Navigate to='/' />} />
-          <Route path='/*' element={<NotFound/>} />
+
+          <Route path='/verCompra' element={<VerMiCompra/>} />
+
+          <Route path='/*' element={ <NotFound/> } />
+          
         </Routes>
         <Footer />
       </BrowserRouter>
