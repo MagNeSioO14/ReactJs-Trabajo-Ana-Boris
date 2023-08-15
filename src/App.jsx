@@ -4,7 +4,7 @@ import ItemsListContainer from "./componentes/ItemListContainer/ItemListContaine
 import './App.css'
 import './componentes/Header/Header.scss'
 import './componentes/ItemListContainer/ItemListContainer.scss'
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { CarouselDark } from './componentes/Carousel/CarouselDark';
 import Footer from './componentes/Footer/Footer';
 import ItemDetailContainer from './componentes/ItemDetailContainer/ItemDetailContainer';
@@ -17,42 +17,40 @@ import { CartProvider } from './context/CartContext';
 import CartView from './componentes/CartView/CartView';
 import { Menu } from './componentes/Header/Menu/Menu';
 import AgregarProducto from './componentes/AgregarProducto/AgregarProducto';
-import { AuthProvider } from './context/AuthContext';
+import { useAuth } from './context/AuthContext';
+import { NotFound } from './componentes/NotFound/NotFound';
 
 
 function App() {
+  const { isAdmin } = useAuth()
   return (
-    <AuthProvider>
-      <CartProvider>
-        <BrowserRouter>
 
-          <Header />
-          <Menu />
+    <CartProvider>
+      <BrowserRouter>
+        <Header />
+        <Menu />
+        <Routes>
+          <Route path='/' element={
+            <div>
+              <CarouselDark />
+              <ItemsListContainer />
+            </div>
+          } />
+          <Route path='/producto/:itemId' element={<ItemDetailContainer />} />
+          <Route path='/compra' element={<CartView />} />
+          <Route path='/catalogo' element={<Catalogo />} />
+          <Route path='/nosotros' element={<Nosotros />} />
+          <Route path='/talles' element={<NuestrosTalles />} />
+          <Route path='/contacto' element={<Contacto />} />
+          <Route path='/catalogo/:categoryId' element={<Catalogo />} />
+          <Route path='/checkout' element={<Checkout />} />
+          <Route path='/agregar' element={isAdmin ? <AgregarProducto /> : <Navigate to='/' />} />
+          <Route path='/*' element={<NotFound/>} />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
+    </CartProvider>
 
-          <Routes>
-            <Route path='/' element={
-              <div>
-                <CarouselDark />
-                <ItemsListContainer />
-              </div>
-            } />
-
-            <Route path='/producto/:itemId' element={<ItemDetailContainer />} />
-            <Route path='/compra' element={<CartView />} />
-            <Route path='/catalogo' element={<Catalogo />} />
-            <Route path='/nosotros' element={<Nosotros />} />
-            <Route path='/talles' element={<NuestrosTalles />} />
-            <Route path='/contacto' element={<Contacto />} />
-            <Route path='/catalogo/:categoryId' element={<Catalogo />} />
-            <Route path='/checkout' element={<Checkout />} />
-            {<Route path='/agregar' element={<AgregarProducto />} />}
-
-          </Routes>
-
-          <Footer />
-        </BrowserRouter>
-      </CartProvider>
-    </AuthProvider>
   )
 }
 
