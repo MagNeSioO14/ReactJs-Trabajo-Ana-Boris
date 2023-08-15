@@ -8,13 +8,14 @@ import { Link } from "react-router-dom";
 const VerMiCompra = () => {
     const [prodEncontrado, setProdEncontrado] = useState([]);
     const [ordenEncontrada, setOrdenEncontrada] = useState(false);
+    const [busqueda, setBusqueda] = useState(false)
 
     const handleProducto = async ({ codProd }) => {
         try {
             const compraRef = doc(db, 'ordenes', codProd)
             const compraSnapshot = await getDoc(compraRef)
 
-            if (compraSnapshot != null) {
+            if (compraSnapshot.exists()) {
                 const compraData = compraSnapshot.data()
                 const items = compraData.items;
                 setProdEncontrado(items)
@@ -24,16 +25,26 @@ const VerMiCompra = () => {
                 setProdEncontrado(null)
                 setOrdenEncontrada(false)
             }
+            setBusqueda(true)
         }
         catch (error) {
             console.log(error);
         }
+
     }
 
     return (
         <div className="compraEstilos" >
             <h1>Ver tu compra</h1>
-            <h2>Total: $ {prodEncontrado.reduce((acc, item) => acc + item.precio * item.cantidad, 0)}</h2>
+            {
+                busqueda && 
+                <div>
+                    {ordenEncontrada 
+                        ? <h2>Total: $ {prodEncontrado.reduce((acc, item) => acc + item.precio * item.cantidad, 0)}</h2>
+                        : <h2>No se encontro ninguna orden</h2>
+                    }
+                </div>
+            }
 
             {!ordenEncontrada ? <Formik
                 initialValues={{
@@ -49,20 +60,22 @@ const VerMiCompra = () => {
                 :
                 prodEncontrado.map((item) => (
                     <>
-                    <div className="articuloCart" key={item.id}>
-                        <div className="imgDiv">
-                            <img src={item.imagen} alt={item.titulo} />
+                        <div className="articuloCart" key={item.id}>
+                            <div className="imgDiv">
+                                <img src={item.imagen} alt={item.titulo} />
+                            </div>
+                            <div className="descrptionDiv">
+                                <h3>{item.titulo}</h3>
+                                <p>Precio: ${item.precio * item.cantidad}</p>
+                                <p>Cantidad: {item.cantidad}</p>
+                            </div>
+                            <hr />
                         </div>
-                        <div className="descrptionDiv">
-                            <h3>{item.titulo}</h3>
-                            <p>Precio: ${item.precio * item.cantidad}</p>
-                            <p>Cantidad: {item.cantidad}</p>
-                        </div>
-                        <hr />
-                    </div>
-                    <Link className='btnVolver' to="/" >Volver a la tienda</Link>
                     </>
                 ))
+            }
+            { ordenEncontrada &&
+                <Link className='btnVolver' to="/" >Volver a la tienda</Link>
             }
         </div>
     )

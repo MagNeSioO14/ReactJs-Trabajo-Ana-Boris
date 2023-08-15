@@ -38,11 +38,11 @@ export const Contacto = () => {
 
             <div className="contactorder formTamaño">
                 <form className="formorden">
-                    <label for="Nombre">Nombre</label>
+                    <label htmlFor="Nombre">Nombre</label>
                     <input type="text" placeholder="Ingrese su Nombre" id="Nombre" />
-                    <label for="">Correo</label>
+                    <label htmlFor="">Correo</label>
                     <input type="email" placeholder="Ingrese su Correo" />
-                    <label for="">Telefono</label>
+                    <label htmlFor="">Telefono</label>
                     <input type="number" placeholder="Ingrese su Telefono" />
                     <textarea name="" id="" cols="30" rows="10" placeholder="Ingrese su mensaje"></textarea>
 
