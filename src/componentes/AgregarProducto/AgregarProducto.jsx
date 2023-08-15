@@ -38,7 +38,7 @@ const schema = Yup.object().shape({
 const AgregarProducto = () => {
     const [loading, setLoading] = useState(false)
 
-    const handleSubmit = async (values) => {
+    const handleSubmit = async (values, { resetForm }) => {
         setLoading(true)
         const imgref = await subirArchivo(values.imagen)
 
@@ -49,7 +49,7 @@ const AgregarProducto = () => {
         const productosRef = collection(db, "productos")
         addDoc(productosRef, orden)
         setLoading(false)
-        resetForm();
+        resetForm()
     }
 
     return (
@@ -106,8 +106,8 @@ const AgregarProducto = () => {
 
                         <button disabled={loading} className="btn btn-success" type="submit">confirmar</button>
 
-                        {loading && <Loader/>}
-                    
+                        {loading && <Loader />}
+
 
                     </Form>
                 )}
